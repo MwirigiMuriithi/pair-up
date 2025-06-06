@@ -1,0 +1,9 @@
+<!-- AlAndMa/app/src/main/res/drawable/ic_dreams.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp"
+    android:viewportWidth="24" android:viewportHeight="24">
+    <!-- Replace with  “Dream/Goal” icon path data -->
+    <path
+        android:fillColor="?attr/colorOnSurface"
+        android:pathData="M12 2C8.13 2 5 5.13 5 9c0 4.49 3.57 8.22 8 9 4.43-.78 8-4.51 8-9 0-3.87-3.13-7-7-7zm0 16.5c-3.04-.66-5.5-3.47-5.5-6.5s2.46-5.84 5.5-6.5c3.04.66 5.5 3.47 5.5 6.5s-2.46 5.84-5.5 6.5z" />
+</vector>
