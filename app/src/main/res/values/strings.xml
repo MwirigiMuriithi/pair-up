@@ -1,0 +1,9 @@
+<!-- AlAndMa/app/src/main/res/values/strings.xml -->
+<resources>
+    <string name="app_name">Al&amp;Ma</string>
+    <string name="tab_today">Today</string>
+    <string name="tab_journey">Journey</string>
+    <string name="tab_bucket">Bucket</string>
+    <string name="tab_hearts">Hearts</string>
+    <string name="tab_dreams">Dreams</string>
+</resources>
