@@ -4,21 +4,41 @@ package com.example.alandma
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import com.example.alandma.ui.theme.AlAndMaTheme
 import com.example.alandma.ui.navigation.NavGraph
-import com.example.alandma.ui.theme.AlandmaTheme
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AlandmaTheme {
-                NavGraph()
+            AlAndMaTheme {
+                NavGraph()  // your Compose navigation graph
             }
         }
     }
 }
+
+//package com.example.alandma
+//
+//import android.os.Bundle
+//import androidx.activity.ComponentActivity
+//import androidx.activity.compose.setContent
+//import com.example.alandma.ui.navigation.NavGraph
+//import com.example.alandma.ui.theme.AlandmaTheme
+//import dagger.hilt.android.AndroidEntryPoint
+//
+//@AndroidEntryPoint
+//class MainActivity : ComponentActivity() {
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        setContent {
+//            AlandmaTheme {
+//                NavGraph()
+//            }
+//        }
+//    }
+//}
+
 
 //package com.example.alandma
 //
