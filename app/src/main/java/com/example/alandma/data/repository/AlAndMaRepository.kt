@@ -6,15 +6,14 @@ import com.example.alandma.data.remote.model.*
 import com.example.alandma.data.remote.repository.RemoteRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import javax.inject.Inject
-import javax.inject.Singleton
+//import javax.inject.Inject
+//import javax.inject.Singleton
 
 /**
  * Combines local Room operations with remote sync calls.
  * For brevity, mapping between Entity <-> Model/Dto is done inline.
  */
-@Singleton
-class AlAndMaRepository @Inject constructor(
+class AlAndMaRepository (
     private val local: LocalRepository,
     private val remote: RemoteRepository
 ) {
