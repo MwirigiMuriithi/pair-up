@@ -6,17 +6,19 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.CalendarToday
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
+//import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.alandma.data.local.entity.DreamEntity
 import com.example.alandma.util.DateUtils
+import org.koin.androidx.compose.getViewModel
 
 @Composable
 fun DreamsScreen(
-    viewModel: DreamsViewModel = hiltViewModel()
+    viewModel: DreamsViewModel = getViewModel()
 ) {
     val dreams by viewModel.dreams.collectAsState()
     var showAddDialog by remember { mutableStateOf(false) }
