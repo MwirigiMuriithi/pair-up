@@ -5,13 +5,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.alandma.data.local.entity.TodayTaskEntity
 import com.example.alandma.data.repository.AlAndMaRepository
-import dagger.hilt.android.lifecycle.HiltViewModel
+//import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
-import javax.inject.Inject
+//import javax.inject.Inject
 
-@HiltViewModel
-class TodayViewModel @Inject constructor(
+//@HiltViewModel
+class TodayViewModel(
     private val repository: AlAndMaRepository
 ) : ViewModel() {
 
