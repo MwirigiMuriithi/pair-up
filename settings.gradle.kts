@@ -6,6 +6,7 @@ pluginManagement {
         gradlePluginPortal()  // required for plugins by alias(libs.plugins.…)
         google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") }
     }
 }
 
@@ -15,6 +16,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") }
     }
 }
 
