@@ -5,13 +5,21 @@ import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
+import androidx.compose.foundation.layout.padding
+import androidx.compose.ui.Modifier
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.*
+import androidx.compose.material.Scaffold
 
 import com.example.alandma.R
+import com.example.alandma.ui.screens.BucketScreen.BucketScreen
+import com.example.alandma.ui.screens.DreamsScreen.DreamsScreen
+import com.example.alandma.ui.screens.HeartsScreen.HeartsScreen
+import com.example.alandma.ui.screens.JourneyScreen.JourneyScreen
+import com.example.alandma.ui.screens.TodayScreen.TodayScreen
 
 sealed class Screen(val route: String, val iconRes: Int, val titleRes: Int) {
     object Today   : Screen("today",   R.drawable.ic_today,   R.string.tab_today)
@@ -58,7 +66,8 @@ fun NavGraph(startDestination: String = Screen.Today.route) {
         NavHost(
             navController = navController,
             startDestination = startDestination,
-            modifier = androidx.compose.ui.Modifier.padding(innerPadding)
+            modifier = Modifier.padding(innerPadding)
+//            modifier = androidx.compose.ui.Modifier.padding(innerPadding)
         ) {
             composable(Screen.Today.route)   { TodayScreen()   }
             composable(Screen.Journey.route) { JourneyScreen() }
