@@ -5,8 +5,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
-    alias(libs.plugins.hilt)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -15,7 +15,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.alandma"
-        minSdk        = 21
+        minSdk        = 26
         targetSdk     = 35
         versionCode   = 1
         versionName   = "1.0"
@@ -47,30 +47,41 @@ dependencies {
     implementation(libs.compose.material)
     implementation(libs.compose.tooling.preview)
     debugImplementation(libs.compose.tooling.debug)
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
+    implementation(libs.koin.compose)
 
     // -- Navigation (Compose) --
     implementation(libs.navigation.compose)
+    implementation(libs.compose.material.icons.extended)
+    implementation(libs.compose.foundation.layout)
+//    implementation(libs.calendarview)
+    implementation(libs.calendar.compose)
+
+
 
     // -- Room (SQLite) --
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
-    kapt(libs.room.compiler)
+//    kapt(libs.room.compiler)
+    ksp(libs.room.compiler)
 
     // -- Retrofit + OkHttp + Gson --
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.okhttp.logging)
 
-    // -- Hilt (DI) --
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
-    implementation(libs.hilt.navigation.compose)
+//    // -- Hilt (DI) --
+//    implementation(libs.hilt.android)
+//    kapt(libs.hilt.compiler)
+//    implementation(libs.hilt.navigation.compose)
 
     // -- Coroutines --
     implementation(libs.coroutines.android)
 
     // -- Lifecycle + ViewModel (Compose) --
     implementation(libs.lifecycle.viewmodel.compose)
+    implementation(libs.android.material)
 
     // -- Logging --
     implementation(libs.timber)
