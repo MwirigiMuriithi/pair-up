@@ -4,6 +4,8 @@ package com.example.alandma.ui.theme
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
+
 
 private val LightColorPalette = lightColors(
     primary   = BlushPink,
