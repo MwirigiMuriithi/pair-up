@@ -10,13 +10,14 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
+//import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.alandma.ui.components.TaskCard
 import com.example.alandma.data.local.entity.TodayTaskEntity
+import org.koin.androidx.compose.getViewModel
 
 @Composable
 fun TodayScreen(
-    viewModel: TodayViewModel = hiltViewModel()
+    viewModel: TodayViewModel = getViewModel()
 ) {
     val tasks by viewModel.tasks.collectAsState()
     var showAddDialog by remember { mutableStateOf(false) }
