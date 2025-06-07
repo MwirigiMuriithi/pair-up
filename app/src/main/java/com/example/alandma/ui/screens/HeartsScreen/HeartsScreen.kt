@@ -10,12 +10,13 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
+//import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.alandma.data.local.entity.SpiritualEntryEntity
+import org.koin.androidx.compose.getViewModel
 
 @Composable
 fun HeartsScreen(
-    viewModel: HeartsViewModel = hiltViewModel()
+    viewModel: HeartsViewModel = getViewModel()
 ) {
     val entries by viewModel.entries.collectAsState()
     var showAddDialog by remember { mutableStateOf(false) }
