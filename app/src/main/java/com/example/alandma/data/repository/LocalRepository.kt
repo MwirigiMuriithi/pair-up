@@ -4,11 +4,11 @@ package com.example.alandma.data.repository
 import com.example.alandma.data.local.dao.*
 import com.example.alandma.data.local.entity.*
 import kotlinx.coroutines.flow.Flow
-import javax.inject.Inject
-import javax.inject.Singleton
+//import javax.inject.Inject
+//import javax.inject.Singleton
 
-@Singleton
-class LocalRepository @Inject constructor(
+//@Singleton
+class LocalRepository(
     private val todayDao: TodayDao,
     private val eventDao: EventDao,
     private val bucketItemDao: BucketItemDao,
