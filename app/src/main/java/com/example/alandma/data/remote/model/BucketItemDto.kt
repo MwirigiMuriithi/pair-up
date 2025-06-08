@@ -2,10 +2,13 @@
 package com.example.alandma.data.remote.model
 
 data class BucketItemDto(
-    val id: Long,
-    val title: String,
-    val category: String,
-    val isCompleted: Boolean,
-    val completedDateMillis: Long?,
-    val isFavorite: Boolean
+        val id: Long,
+        val groupId: String,
+        val createdBy: String,
+        val updatedBy: String,
+        val title: String,
+        val category: String,
+        val isCompleted: Boolean,
+        val completedDateMillis: Long?,
+        val isFavorite: Boolean
 )
