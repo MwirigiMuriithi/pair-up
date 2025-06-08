@@ -7,9 +7,11 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "bucket_items")
 data class BucketItemEntity(
         @PrimaryKey(autoGenerate = true) val id: Long = 0,
-        val groupId: String,
-        val createdBy: String,
-        val updatedBy: String,
+        // TODO: pass in values once I wire in authentication, DO NOT USE DEFAULTS.
+        val groupId: String = "",
+        val createdBy: String = "",
+        val updatedBy: String = "",
+        val title: String,
         val category: String, // "Travel", "Food", etc.
         val isCompleted: Boolean = false,
         val completedDateMillis: Long? = null,
