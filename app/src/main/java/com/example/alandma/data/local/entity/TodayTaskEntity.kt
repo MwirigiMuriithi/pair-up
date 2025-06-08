@@ -6,9 +6,12 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "today_tasks")
 data class TodayTaskEntity(
-    @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    val title: String,
-    val description: String? = null,
-    val isCompleted: Boolean = false,
-    val dueDateMillis: Long // store as epoch millis
+        @PrimaryKey(autoGenerate = true) val id: Long = 0,
+        val groupId: String,
+        val createdBy: String,
+        val updatedBy: String,
+        val title: String,
+        val description: String? = null,
+        val isCompleted: Boolean = false,
+        val dueDateMillis: Long // store as epoch millis
 )
