@@ -12,6 +12,7 @@ import com.example.alandma.data.remote.repository.RemoteRepository
 import com.example.alandma.data.repository.LocalRepository
 import com.example.alandma.data.repository.AlAndMaRepository
 import com.example.alandma.auth.AuthViewModel
+import com.example.alandma.util.DataStoreManager
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -21,6 +22,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 val appModule = module {
+
+  // — DataStoreManager —
+  single { DataStoreManager(androidContext()) }
 
   // --- HTTP client w/ logging interceptor ---
   single {
@@ -59,7 +63,8 @@ val appModule = module {
   single { get<AlAndMaDatabase>().dreamDao() }
 
   // --- Data + Repo Layer ---
-  single { RemoteRepository(get()) }
+//  single { RemoteRepository(get()) }
+  single { RemoteRepository() }
   single {
     LocalRepository(
       todayDao          = get(),
@@ -77,7 +82,7 @@ val appModule = module {
   // --- Feature ViewModels ---
   viewModel { com.example.alandma.ui.screens.TodayScreen.TodayViewModel(get()) }
   viewModel { com.example.alandma.ui.screens.JourneyScreen.JourneyViewModel(get()) }
-  viewModel { com.example.alandma.ui.screens.BucketScreen.BucketViewModel(get()) }
+  viewModel { com.example.alandma.ui.screens.BucketScreen.BucketViewModel(get(), get()) }
   viewModel { com.example.alandma.ui.screens.HeartsScreen.HeartsViewModel(get()) }
   viewModel { com.example.alandma.ui.screens.DreamsScreen.DreamsViewModel(get()) }
 }
