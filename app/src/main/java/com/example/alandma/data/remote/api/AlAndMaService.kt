@@ -71,3 +71,24 @@ interface AlAndMaService {
     @DELETE("dreams/{id}")
     suspend fun deleteDream(@Path("id") id: Long): Response<Unit>
 }
+
+
+// interface AlAndMaService {
+//   @GET("groups/{groupId}/todayTasks")
+//   suspend fun getAllTodayTasks(@Path("groupId") groupId: String): Response<List<TodayTaskDto>>
+
+//   @POST("groups/{groupId}/todayTasks")
+//   suspend fun createOrUpdateTodayTask(
+//     @Path("groupId") groupId: String,
+//     @Body dto: TodayTaskDto
+//   ): Response<TodayTaskDto>
+
+//   @DELETE("groups/{groupId}/todayTasks/{id}")
+//   suspend fun deleteTodayTask(
+//     @Path("groupId") groupId: String,
+//     @Path("id") id: Long,
+//     @Query("actorId") updatedBy: String
+//   ): Response<Unit>
+
+//   // … repeat for events, bucketItems, spiritualEntries, dreams …
+// }
