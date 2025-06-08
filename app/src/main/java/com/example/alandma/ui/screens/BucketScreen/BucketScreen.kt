@@ -21,6 +21,8 @@ fun BucketScreen(
     viewModel: BucketViewModel = getViewModel()
 ) {
     val items by viewModel.items.collectAsState()
+    val groupId      by viewModel.currentGroupId.collectAsState()
+    val createdBy    by viewModel.currentUserId.collectAsState()
     var showAddDialog by remember { mutableStateOf(false) }
 
     Scaffold(
@@ -63,6 +65,9 @@ fun BucketScreen(
                 onDismiss = { showAddDialog = false },
                 onSave = { title, category ->
                     val newItem = BucketItemEntity(
+                        groupId   = groupId,
+                        createdBy = createdBy,
+                        updatedBy = createdBy,
                         title = title,
                         category = category
                     )
