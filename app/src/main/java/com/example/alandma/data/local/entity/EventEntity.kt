@@ -6,9 +6,12 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "events")
 data class EventEntity(
-    @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    val title: String,
-    val description: String? = null,
-    val eventDateMillis: Long, // epoch millis for calendar
-    val type: String // e.g. "spiritual", "goal", "general", etc.
+        @PrimaryKey(autoGenerate = true) val id: Long = 0,
+        val groupId: String,
+        val createdBy: String,
+        val updatedBy: String,
+        val title: String,
+        val description: String? = null,
+        val eventDateMillis: Long, // epoch millis for calendar
+        val type: String // e.g. "spiritual", "goal", "general", etc.
 )
