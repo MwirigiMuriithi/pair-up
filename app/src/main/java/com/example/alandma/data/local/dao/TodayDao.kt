@@ -22,3 +22,15 @@ interface TodayDao {
     @Query("DELETE FROM today_tasks")
     suspend fun clearAll()
 }
+
+// @Dao
+// interface TodayDao {
+//   @Query("SELECT * FROM today_tasks WHERE groupId = :groupId ORDER BY dueDateMillis ASC")
+//   fun getAllTasks(groupId: String): Flow<List<TodayTaskEntity>>
+
+//   @Insert(onConflict = OnConflictStrategy.REPLACE)
+//   suspend fun insert(task: TodayTaskEntity): Long
+
+//   @Update suspend fun update(task: TodayTaskEntity)
+//   @Delete suspend fun delete(task: TodayTaskEntity)
+// }
