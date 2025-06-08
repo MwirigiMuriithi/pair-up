@@ -6,9 +6,12 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "dreams")
 data class DreamEntity(
-    @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    val title: String,         // e.g. “Move to a new city”
-    val description: String?,  // extra notes
-    val isAchieved: Boolean = false,
-    val targetDateMillis: Long // when you hope to achieve it
+        @PrimaryKey(autoGenerate = true) val id: Long = 0,
+        val groupId: String,
+        val createdBy: String,
+        val updatedBy: String,
+        val title: String, // e.g. “Move to a new city”
+        val description: String?, // extra notes
+        val isAchieved: Boolean = false,
+        val targetDateMillis: Long // when you hope to achieve it
 )
