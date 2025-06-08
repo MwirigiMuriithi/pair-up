@@ -1,0 +1,159 @@
+.
+├── app
+│   ├── build.gradle.kts
+│   ├── .gitignore
+│   ├── proguard-rules.pro
+│   └── src
+│       ├── androidTest
+│       │   └── java
+│       │       └── com
+│       │           └── example
+│       │               └── alandma
+│       │                   └── ExampleInstrumentedTest.kt
+│       ├── main
+│       │   ├── AndroidManifest.xml
+│       │   ├── java
+│       │   │   └── com
+│       │   │       └── example
+│       │   │           └── alandma
+│       │   │               ├── auth
+│       │   │               │   ├── AuthViewModel.kt
+│       │   │               │   ├── CreateGroupScreen.kt
+│       │   │               │   ├── GroupViewModel.kt
+│       │   │               │   ├── LoginScreen.kt
+│       │   │               │   └── RegisterScreen.kt
+│       │   │               ├── data
+│       │   │               │   ├── local
+│       │   │               │   │   ├── dao
+│       │   │               │   │   │   ├── BucketItemDao.kt
+│       │   │               │   │   │   ├── DreamDao.kt
+│       │   │               │   │   │   ├── EventDao.kt
+│       │   │               │   │   │   ├── GroupDao.kt
+│       │   │               │   │   │   ├── SpiritualEntryDao.kt
+│       │   │               │   │   │   └── TodayDao.kt
+│       │   │               │   │   ├── db
+│       │   │               │   │   │   └── AlAndMaDatabase.kt
+│       │   │               │   │   └── entity
+│       │   │               │   │       ├── BucketItemEntity.kt
+│       │   │               │   │       ├── DreamEntity.kt
+│       │   │               │   │       ├── EventEntity.kt
+│       │   │               │   │       ├── GroupEntity.kt
+│       │   │               │   │       ├── SpiritualEntryEntity.kt
+│       │   │               │   │       └── TodayTaskEntity.kt
+│       │   │               │   ├── model
+│       │   │               │   │   ├── BucketItem.kt
+│       │   │               │   │   ├── Dream.kt
+│       │   │               │   │   ├── Event.kt
+│       │   │               │   │   ├── SpiritualEntry.kt
+│       │   │               │   │   └── TodayTask.kt
+│       │   │               │   ├── remote
+│       │   │               │   │   ├── api
+│       │   │               │   │   │   ├── AlAndMaService.kt
+│       │   │               │   │   │   ├── AuthService.kt
+│       │   │               │   │   │   ├── GroupService.kt
+│       │   │               │   │   │   └── RetrofitInstance.kt
+│       │   │               │   │   ├── model
+│       │   │               │   │   │   ├── AuthRequest.kt
+│       │   │               │   │   │   ├── AuthResponse.kt
+│       │   │               │   │   │   ├── BucketItemDto.kt
+│       │   │               │   │   │   ├── DreamDto.kt
+│       │   │               │   │   │   ├── EventDto.kt
+│       │   │               │   │   │   ├── GroupDto.kt
+│       │   │               │   │   │   ├── GroupRequest.kt
+│       │   │               │   │   │   ├── SpiritualEntryDto.kt
+│       │   │               │   │   │   └── TodayTaskDto.kt
+│       │   │               │   │   └── repository
+│       │   │               │   │       ├── AuthRepository.kt
+│       │   │               │   │       ├── GroupRepository.kt
+│       │   │               │   │       └── RemoteRepository.kt
+│       │   │               │   └── repository
+│       │   │               │       ├── AlAndMaRepository.kt
+│       │   │               │       └── LocalRepository.kt
+│       │   │               ├── di
+│       │   │               │   └── AppModule.kt
+│       │   │               ├── MainActivity.kt
+│       │   │               ├── MainApplication.kt
+│       │   │               ├── ui
+│       │   │               │   ├── components
+│       │   │               │   │   ├── BottomBar.kt
+│       │   │               │   │   ├── BucketItemCard.kt
+│       │   │               │   │   └── TaskCard.kt
+│       │   │               │   ├── navigation
+│       │   │               │   │   ├── AuthNavGraph.kt
+│       │   │               │   │   └── NavGraph.kt
+│       │   │               │   ├── screens
+│       │   │               │   │   ├── BucketScreen
+│       │   │               │   │   │   ├── BucketScreen.kt
+│       │   │               │   │   │   └── BucketViewModel.kt
+│       │   │               │   │   ├── DreamsScreen
+│       │   │               │   │   │   ├── DreamsScreen.kt
+│       │   │               │   │   │   └── DreamsViewModel.kt
+│       │   │               │   │   ├── HeartsScreen
+│       │   │               │   │   │   ├── HeartsScreen.kt
+│       │   │               │   │   │   └── HeartsViewModel.kt
+│       │   │               │   │   ├── JourneyScreen
+│       │   │               │   │   │   ├── JourneyScreen.kt
+│       │   │               │   │   │   └── JourneyViewModel.kt
+│       │   │               │   │   └── TodayScreen
+│       │   │               │   │       ├── TodayScreen.kt
+│       │   │               │   │       └── TodayViewModel.kt
+│       │   │               │   └── theme
+│       │   │               │       ├── Color.kt
+│       │   │               │       ├── Shape.kt
+│       │   │               │       ├── Theme.kt
+│       │   │               │       └── Type.kt
+│       │   │               └── util
+│       │   │                   ├── Constants.kt
+│       │   │                   ├── DataStoreManager.kt
+│       │   │                   ├── DateUtils.kt
+│       │   │                   └── NetworkUtils.kt
+│       │   └── res
+│       │       ├── drawable
+│       │       │   ├── ic_bucket.xml
+│       │       │   ├── ic_dreams.xml
+│       │       │   ├── ic_hearts.xml
+│       │       │   ├── ic_journey.xml
+│       │       │   ├── ic_launcher_background.xml
+│       │       │   ├── ic_launcher_foreground.xml
+│       │       │   └── ic_today.xml
+│       │       ├── mipmap-anydpi-v26
+│       │       │   ├── ic_launcher_round.xml
+│       │       │   └── ic_launcher.xml
+│       │       ├── mipmap-hdpi
+│       │       │   ├── ic_launcher_round.webp
+│       │       │   └── ic_launcher.webp
+│       │       ├── mipmap-mdpi
+│       │       │   ├── ic_launcher_round.webp
+│       │       │   └── ic_launcher.webp
+│       │       ├── mipmap-xhdpi
+│       │       │   ├── ic_launcher_round.webp
+│       │       │   └── ic_launcher.webp
+│       │       ├── mipmap-xxhdpi
+│       │       │   ├── ic_launcher_round.webp
+│       │       │   └── ic_launcher.webp
+│       │       ├── mipmap-xxxhdpi
+│       │       │   ├── ic_launcher_round.webp
+│       │       │   └── ic_launcher.webp
+│       │       ├── values
+│       │       │   ├── colors.xml
+│       │       │   ├── strings.xml
+│       │       │   └── themes.xml
+│       │       └── xml
+│       │           ├── backup_rules.xml
+│       │           └── data_extraction_rules.xml
+│       └── test
+│           └── java
+│               └── com
+│                   └── example
+│                       └── alandma
+│                           └── ExampleUnitTest.kt
+├── build.gradle.kts
+├── .gitignore
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+├── local.properties
+├── project_structure.txt
+└── settings.gradle.kts
+
+52 directories, 105 files
