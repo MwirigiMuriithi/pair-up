@@ -71,6 +71,10 @@ dependencies {
     implementation(libs.converter.gson)
     implementation(libs.okhttp.logging)
 
+
+  implementation(libs.datastore.core)
+  implementation(libs.datastore.preferences)
+
 //    // -- Hilt (DI) --
 //    implementation(libs.hilt.android)
 //    kapt(libs.hilt.compiler)
