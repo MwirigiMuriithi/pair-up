@@ -70,6 +70,7 @@ class AlAndMaRepository(
             groupId = entity.groupId,
             createdBy = entity.createdBy,
             updatedBy = entity.updatedBy,
+            title = entity.title,
             category = entity.category,
             isCompleted = entity.isCompleted,
             completedDateMillis = entity.completedDateMillis,
