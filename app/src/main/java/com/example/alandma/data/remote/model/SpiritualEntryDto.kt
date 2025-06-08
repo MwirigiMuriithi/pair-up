@@ -2,8 +2,11 @@
 package com.example.alandma.data.remote.model
 
 data class SpiritualEntryDto(
-    val id: Long,
-    val title: String,
-    val content: String,
-    val timestampMillis: Long
+        val id: Long,
+        val groupId: String,
+        val createdBy: String,
+        val updatedBy: String,
+        val title: String,
+        val content: String,
+        val timestampMillis: Long
 )
