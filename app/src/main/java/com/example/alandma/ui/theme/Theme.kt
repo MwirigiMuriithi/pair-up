@@ -2,33 +2,37 @@
 package com.example.alandma.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.*
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
 
-private val LightColorPalette = lightColors(
-    primary   = BlushPink,
-    primaryVariant = SageGreen,
-    secondary = LightSkyBlue,
-    background = WarmCream,
-    surface   = Color.White,
-    onPrimary = Color.White,
-    onSecondary = Color.Black,
-    onBackground = Color.Black,
-    onSurface = Color.Black
+private val LightColorScheme = lightColorScheme(
+    primary            = BlushPink,
+    onPrimary          = Color.White,
+    secondary          = LightSkyBlue,
+    onSecondary        = Color.Black,
+    tertiary           = SageGreen,
+    background         = WarmCream,
+    onBackground       = Color.Black,
+    surface            = Color.White,
+    onSurface          = Color.Black,
+    error              = ErrorRed,
+    onError            = Color.White
 )
 
-private val DarkColorPalette = darkColors(
-    primary   = SoftLavender,
-    primaryVariant = GoldAccent,
-    secondary = SageGreen,
-    background = Color.Black,
-    surface   = Color.DarkGray,
-    onPrimary = Color.Black,
-    onSecondary = Color.Black,
-    onBackground = Color.White,
-    onSurface = Color.White
+private val DarkColorScheme = darkColorScheme(
+    primary            = SoftLavender,
+    onPrimary          = Color.Black,
+    secondary          = SageGreen,
+    onSecondary        = Color.Black,
+    tertiary           = GoldAccent,
+    background         = Color.Black,
+    onBackground       = Color.White,
+    surface            = Color.DarkGray,
+    onSurface          = Color.White,
+    error              = ErrorRed,
+    onError            = Color.Black
 )
 
 @Composable
@@ -36,10 +40,10 @@ fun AlAndMaTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
-    val colors = if (darkTheme) DarkColorPalette else LightColorPalette
+    val colors = if (darkTheme) DarkColorScheme else LightColorScheme
 
     MaterialTheme(
-        colors    = colors,
+        colorScheme    = colors,
         typography = AlAndMaTypography,
         shapes    = AlAndMaShapes,
         content   = content
