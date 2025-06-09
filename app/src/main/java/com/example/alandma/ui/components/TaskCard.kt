@@ -3,7 +3,7 @@ package com.example.alandma.ui.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.*
+import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -17,7 +17,7 @@ fun TaskCard(
 ) {
     Card(
         shape = MaterialTheme.shapes.medium,
-        elevation = 4.dp,
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 4.dp)
@@ -29,9 +29,9 @@ fun TaskCard(
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Column(modifier = Modifier.weight(1f)) {
-                Text(text = task.title, style = MaterialTheme.typography.subtitle1)
+                Text(text = task.title, style = MaterialTheme.typography.titleMedium)
                 if (!task.description.isNullOrBlank()) {
-                    Text(text = task.description!!, style = MaterialTheme.typography.body2)
+                    Text(text = task.description!!, style = MaterialTheme.typography.bodyMedium)
                 }
             }
             Checkbox(
