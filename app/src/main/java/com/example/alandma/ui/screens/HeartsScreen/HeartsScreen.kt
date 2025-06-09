@@ -3,7 +3,7 @@ package com.example.alandma.ui.screens.HeartsScreen
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.*
+import androidx.compose.material3.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.*
@@ -41,19 +41,19 @@ fun HeartsScreen(
                         val entry = entries[idx]
                         Card(
                             shape = MaterialTheme.shapes.medium,
-                            elevation = 4.dp,
+                            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(vertical = 4.dp)
                         ) {
                             Column(modifier = Modifier.padding(12.dp)) {
-                                Text(text = entry.title, style = MaterialTheme.typography.subtitle1)
+                                Text(text = entry.title, style = MaterialTheme.typography.titleMedium)
                                 Spacer(modifier = Modifier.height(4.dp))
-                                Text(text = entry.content, style = MaterialTheme.typography.body2)
+                                Text(text = entry.content, style = MaterialTheme.typography.bodyMedium)
                                 Spacer(modifier = Modifier.height(4.dp))
                                 Text(
                                     text = com.example.alandma.util.DateUtils.formatDate(entry.timestampMillis),
-                                    style = MaterialTheme.typography.caption
+                                    style = MaterialTheme.typography.bodySmall
                                 )
                             }
                         }
