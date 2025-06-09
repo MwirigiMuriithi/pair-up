@@ -44,7 +44,10 @@ dependencies {
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
     implementation(libs.compose.ui)
-    implementation(libs.compose.material)
+//    implementation(libs.compose.material)
+    implementation(libs.compose.material3)
+    implementation(libs.compose.material3.window.size)
+    implementation(libs.compose.material3.adaptive.navigation)
     implementation(libs.compose.tooling.preview)
     debugImplementation(libs.compose.tooling.debug)
     implementation(libs.koin.core)
@@ -85,7 +88,7 @@ dependencies {
 
     // -- Lifecycle + ViewModel (Compose) --
     implementation(libs.lifecycle.viewmodel.compose)
-    implementation(libs.android.material)
+     implementation(libs.android.material)
 
     // -- Logging --
     implementation(libs.timber)
