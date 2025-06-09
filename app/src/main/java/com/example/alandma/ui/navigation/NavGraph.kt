@@ -1,10 +1,10 @@
 // AlAndMa/app/src/main/java/com/example/alandma/ui/navigation/NavGraph.kt
 package com.example.alandma.ui.navigation
 
-import androidx.compose.material.BottomNavigation
-import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.Icon
-import androidx.compose.material.Text
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
 import androidx.compose.foundation.layout.padding
 import androidx.compose.ui.Modifier
 import androidx.compose.runtime.Composable
@@ -12,7 +12,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.*
-import androidx.compose.material.Scaffold
+import androidx.compose.material3.Scaffold
 
 import com.example.alandma.R
 import com.example.alandma.ui.screens.BucketScreen.BucketScreen
@@ -38,11 +38,11 @@ fun NavGraph(startDestination: String = Screen.Today.route) {
 
     Scaffold(
         bottomBar = {
-            BottomNavigation {
+            NavigationBar {
                 val currentRoute = navController
                     .currentBackStackEntryAsState().value?.destination?.route
                 items.forEach { screen ->
-                    BottomNavigationItem(
+                    NavigationBarItem(
                         icon = {
                             Icon(
                                 painter = painterResource(id = screen.iconRes),
