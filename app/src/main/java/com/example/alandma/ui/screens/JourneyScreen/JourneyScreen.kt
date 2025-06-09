@@ -5,7 +5,7 @@ package com.example.alandma.ui.screens.JourneyScreen
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.*
+import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -27,19 +27,19 @@ fun JourneyScreen(
         // --- Screen Header ---
         Text(
             text = "My Journey",
-            style = MaterialTheme.typography.h5,
+            style = MaterialTheme.typography.headlineMedium,
             modifier = Modifier.padding(bottom = 16.dp)
         )
 
         // --- Events List ---
         Text(
             text = "Upcoming / Past Events",
-            style = MaterialTheme.typography.h6
+            style = MaterialTheme.typography.headlineSmall
         )
         Spacer(modifier = Modifier.height(8.dp))
 
         if (events.isEmpty()) {
-            Text("No events yet.", style = MaterialTheme.typography.body2)
+            Text("No events yet.", style = MaterialTheme.typography.bodyMedium)
         } else {
             LazyColumn(
                 verticalArrangement = Arrangement.spacedBy(8.dp)
@@ -47,24 +47,24 @@ fun JourneyScreen(
                 items(events) { event ->
                     Card(
                         shape = MaterialTheme.shapes.medium,
-                        elevation = 4.dp,
+                        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         Column(modifier = Modifier.padding(12.dp)) {
                             Text(
                                 text = event.title,
-                                style = MaterialTheme.typography.subtitle1
+                                style = MaterialTheme.typography.titleMedium
                             )
                             Spacer(modifier = Modifier.height(4.dp))
                             Text(
                                 text = DateUtils.formatDate(event.eventDateMillis),
-                                style = MaterialTheme.typography.body2
+                                style = MaterialTheme.typography.bodyMedium
                             )
                             event.description
                                 ?.takeIf { it.isNotBlank() }
                                 ?.let {
                                     Spacer(modifier = Modifier.height(4.dp))
-                                    Text(text = it, style = MaterialTheme.typography.body2)
+                                    Text(text = it, style = MaterialTheme.typography.bodyMedium)
                                 }
                         }
                     }
