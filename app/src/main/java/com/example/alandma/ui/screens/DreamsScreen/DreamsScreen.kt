@@ -3,7 +3,7 @@ package com.example.alandma.ui.screens.DreamsScreen
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.*
+import androidx.compose.material3.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.CalendarToday
@@ -43,17 +43,17 @@ fun DreamsScreen(
                         val dream = dreams[idx]
                         Card(
                             shape = MaterialTheme.shapes.medium,
-                            elevation = 4.dp,
+                            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(vertical = 4.dp)
                         ) {
                             Column(modifier = Modifier.padding(12.dp)) {
-                                Text(text = dream.title, style = MaterialTheme.typography.subtitle1)
+                                Text(text = dream.title, style = MaterialTheme.typography.titleMedium)
                                 DreamDateRow(dream.targetDateMillis)
                                 if (!dream.description.isNullOrBlank()) {
                                     Spacer(modifier = Modifier.height(4.dp))
-                                    Text(text = dream.description!!, style = MaterialTheme.typography.body2)
+                                    Text(text = dream.description!!, style = MaterialTheme.typography.bodyMedium)
                                 }
                                 Row(
                                     modifier = Modifier.fillMaxWidth(),
@@ -99,7 +99,7 @@ private fun DreamDateRow(millis: Long) {
             contentDescription = null,
             modifier = Modifier.padding(end = 4.dp)
         )
-        Text(text = DateUtils.formatDate(millis), style = MaterialTheme.typography.body2)
+        Text(text = DateUtils.formatDate(millis), style = MaterialTheme.typography.bodyMedium)
     }
 }
 
