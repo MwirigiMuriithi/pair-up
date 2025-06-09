@@ -2,7 +2,7 @@
 package com.example.alandma.auth
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.*
+import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -59,7 +59,7 @@ fun LoginScreen(
             is AuthUiState.Loading -> CircularProgressIndicator()
             is AuthUiState.Error   -> Text(
                 text = (uiState as AuthUiState.Error).message,
-                color = MaterialTheme.colors.error
+                color = MaterialTheme.colorScheme.error
             )
             is AuthUiState.Success -> {
                 // pull out the full response object
